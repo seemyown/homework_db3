@@ -17,4 +17,4 @@ WHERE alias NOT LIKE '% %';
 
 SELECT name_of_track
 FROM tracks
-WHERE name_of_track ILIKE '%мой%' OR name_of_track ILIKE '%my%';
+WHERE string_to_array(lower(name_of_track), ' ') && array['my', 'мой']; 
